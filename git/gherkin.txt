@@ -1,0 +1,21 @@
+scenario:Loading a game
+Open the Trebic-Fortress-City-Under-Siege.exe file
+And wait a few seconds
+When game is loaded
+And main menu apeard
+Then click the play button
+When the level has loaded 
+And enemy start walking
+Then start placeing tower for defence
+When enemy get to the gate 
+And it is not killed before
+Then a HP will be taken 
+When tower kill an enemy
+Then you will get gold coins
+And can buy more towers
+And upgrade tower that you bought
+When the gate no more HP points 
+Then you lost
+When you killed the last enemy with some HP on the gate
+Then you won the level 
+And go on to the next level
