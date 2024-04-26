@@ -18,7 +18,7 @@ namespace TestyHry
         [TestMethod]
         public void TestDelkyJmena_NEGATIVE()
         {
-            Assert.IsFalse(steve.Jmeno.Length < 10);
+            Assert.IsFalse(steve.Jmeno.Length > 10);
         }
 
         [TestMethod]
@@ -51,8 +51,8 @@ namespace TestyHry
         [TestMethod]
         public void TestOblicej_POSITIVE()
         {
-            Hráč alex = new Hráč("Petr", "Kouzelník", 0, 0, 0); 
-            Assert.IsTrue( alex.oblicej == 0);
+            Hráč alex = new Hráč("Petr", "Kouzelník", 0, 0, 0);
+            Assert.IsTrue(alex.oblicej == 0);
         }
 
         [TestMethod]
@@ -92,10 +92,13 @@ namespace TestyHry
         public void Specializace_Positive()
         {
             Hráč alex = new Hráč("Petr", "Kouzelník", 0, 0, 5);
-            Assert.IsTrue(alex.Specializace.Contains("Kouzelník"));
-            Assert.IsTrue(alex.Specializace.Contains("Berseker"));
-            Assert.IsTrue(alex.Specializace.Contains("Inženýr"));
-            Assert.IsTrue(alex.Specializace.Contains("Cizák"));
+            Assert.IsTrue(alex.Specializace == "Kouzelník");
+            alex = new Hráč("Petr", "Berserker", 0, 0, 5);
+            Assert.IsTrue(alex.Specializace == "Berserker");
+            alex = new Hráč("Petr", "Inženýr", 0, 0, 5);
+            Assert.IsTrue(alex.Specializace == "Inženýr");
+            alex = new Hráč("Petr", "Cizák", 0, 0, 5);
+            Assert.IsTrue(alex.Specializace == "Cizák");
 
         }
         [TestMethod]
@@ -113,21 +116,11 @@ namespace TestyHry
         [TestMethod]
         public void TestXP_POSIIVE()
         {
-            steve.level = 3;
             Hráč alex = new Hráč("Petr", "Kouzelník", 0, 0, 5);
+            alex.level = 3;
             alex.PridejXP();
-            Assert.IsTrue(alex.XP == 100*steve.level);
+            Assert.IsTrue(alex.XP == 300);
         }
-
-        [TestMethod]
-        public void TestXP_POSIIVE()
-        {
-            steve.level = 3;
-            Hráč alex = new Hráč("Petr", "Kouzelník", 0, 0, 5);
-            alex.PridejXP();
-            Assert.IsTrue(alex.XP == 100 * steve.level);
-        }
-
 
 
     }

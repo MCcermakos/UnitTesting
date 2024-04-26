@@ -10,7 +10,7 @@ namespace Zadání_Hra
     public class Hráč : Herní_Postava
     {
         string specializace;
-        public int oblicej = 0 ;
+        public int oblicej = 0;
         public int vlasy = 0;
         public int barvaVlasu = 0;
         public int XP = 0;
@@ -24,13 +24,13 @@ namespace Zadání_Hra
 
         public string Specializace
         {
-            get 
-            { 
-                return specializace; 
+            get
+            {
+                return specializace;
             }
-            set 
-            { 
-                specializace = value; 
+            set
+            {
+                specializace = value;
             }
         }
         public void PridejXP()

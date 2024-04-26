@@ -35,12 +35,12 @@ namespace Zadání_Hra
 
         public double PoziceX
         {
-            get { return poziceX;}
+            get { return poziceX; }
         }
 
         public double PoziceY
         {
-            get { return poziceY;}
+            get { return poziceY; }
         }
 
         public Herní_Postava(string jmeno)
